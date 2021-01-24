@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCB_Care_WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:GCB_Care_WebApi.Controllers.EspecialidadeController.Get">
+            <summary>
+            Controller responsavél por listar todas as especialidades do sistema.
+            </summary>
+            <response code="200">Retorna status code 200, listar todos dados do sistema.</response>
+            <response code="404">Retorna status code 404 um não encontrado, não tiver nenhum dado.</response>   
+            <response code="400">Retorna stauts code 400 bad request, caso de conflito com api</response> 
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IEspecialidades.Get">
+            <summary>
+            Listar todas as especialidades
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IEspecialidades.GetById(System.Int32)">
+            <summary>
+            Buscar uma especialidade pelo seu ID
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IEspecialidades.Post(GCB_Care_WebApi.Models.TbEspecialidades)">
+            <summary>
+            Cadastrar uma especialidade
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IEspecialidades.Update(System.Int32,GCB_Care_WebApi.Models.TbEspecialidades)">
+            <summary>
+            Atualizar uma especialidade 
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IEspecialidades.Delete(System.Int32)">
+            <summary>
+            Deletar uma especialidade
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.Get">
+            <summary>
+            Listar todos os médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.GetById(System.Int32)">
+            <summary>
+            Buscar um médico pelo seu ID
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.Post(GCB_Care_WebApi.Models.TbMedicos)">
+            <summary>
+            Cadastrar um médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.Update(System.Int32,GCB_Care_WebApi.Models.TbMedicos)">
+            <summary>
+            Atualizar um médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.Delete(System.Int32)">
+            <summary>
+            Deletar um médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedico.GetByEmailAndPass(GCB_Care_WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Buscar por email e senha
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedicoEspecialidade.Get">
+            <summary>
+            Listar todas as especialidades dos médicos
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedicoEspecialidade.GetById(System.Int32)">
+            <summary>
+            Buscar uma especialidade de um médico pelo seu ID
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedicoEspecialidade.Post(GCB_Care_WebApi.Models.TbMedicosEspecialidades)">
+            <summary>
+            Cadastrar uma especialidade uma especialidade de médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedicoEspecialidade.Update(System.Int32,GCB_Care_WebApi.Models.TbMedicosEspecialidades)">
+            <summary>
+            Atualizar uma especialidade de médico 
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IMedicoEspecialidade.Delete(System.Int32)">
+            <summary>
+            Deletar uma especialidade de médico
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.ITipoUsuario.Get">
+            <summary>
+            Listar todos os tipos de usuários
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.ITipoUsuario.GetById(System.Int32)">
+            <summary>
+            Buscar um tipo de usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.ITipoUsuario.Post(GCB_Care_WebApi.Models.TbTipoUsuario)">
+            <summary>
+            Cadastrar um tipo de usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.ITipoUsuario.Update(System.Int32,GCB_Care_WebApi.Models.TbTipoUsuario)">
+            <summary>
+            Atualizar um tipo de usuário 
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.ITipoUsuario.Delete(System.Int32)">
+            <summary>
+            Deletar um tipo de usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.Get">
+            <summary>
+            Listar todos os usuários
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.GetById(System.Int32)">
+            <summary>
+            Buscar um usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.Post(GCB_Care_WebApi.Models.TbUsuarios)">
+            <summary>
+            Cadastrar um usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.Update(System.Int32,GCB_Care_WebApi.Models.TbUsuarios)">
+            <summary>
+            Atualizar um usuário 
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.Delete(System.Int32)">
+            <summary>
+            Deletar um usuário
+            </summary>
+        </member>
+        <member name="M:GCB_CARE_API.Interfaces.IUsuario.GetByEmailAndPass(GCB_Care_WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Buscar por email e senha
+            </summary>
+        </member>
+    </members>
+</doc>
