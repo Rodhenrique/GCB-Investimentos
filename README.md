@@ -8,8 +8,8 @@
   
   ![alt text](https://github.com/Rodhenrique/GCB-Investimentos/blob/main/Prints/Diagrama.png) 
   
-<h5>API C# Swaggen onde listar todos os controllers
-<h6> Para API pegar informações do seu banco de dados você deve ir em Abrir a API no visual Studio e vai em Models > GcbCareContext.cs > acessa a linha 29 e trocar a string de conexão do SQL Server
+<h4>API C# Swaggen onde listar todos os controllers
+<h5> Para API pegar informações do seu banco de dados você deve ir em Abrir a API no visual Studio e vai em Models > GcbCareContext.cs > acessa a linha 29 e trocar a string de conexão do SQL Server
     
   ![alt text](https://github.com/Rodhenrique/GCB-Investimentos/blob/main/Prints/Captura%20de%20Tela%20(17).png) 
    ![alt text](https://github.com/Rodhenrique/GCB-Investimentos/blob/main/Prints/Captura%20de%20Tela%20(18).png)
