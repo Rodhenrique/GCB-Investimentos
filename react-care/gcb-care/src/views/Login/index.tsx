@@ -13,8 +13,8 @@ function Login(){
     const login =()=>{
 
         const login = {
-            email: email,
-            senha: senha
+            Email: email,
+            Senha: senha
         };
         const url = "http://localhost:5000/api/Login";
 
@@ -29,7 +29,6 @@ function Login(){
             .then((dados) => {
                 if (dados.token != undefined) {
                     localStorage.setItem("Gcb-Caren-Token", dados.token); 
-                    console.log(dados.token);
                     history.push("/Panel"); 
                 } else alert("Email ou senha inválidos"); 
             })

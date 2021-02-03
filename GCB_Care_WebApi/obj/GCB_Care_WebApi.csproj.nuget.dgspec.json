@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henri\\Desktop\\GCB_Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj": {}
+    "C:\\Users\\henri\\Desktop\\GCB-Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henri\\Desktop\\GCB_Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj": {
+    "C:\\Users\\henri\\Desktop\\GCB-Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henri\\Desktop\\GCB_Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\henri\\Desktop\\GCB-Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj",
         "projectName": "GCB_Care_WebApi",
-        "projectPath": "C:\\Users\\henri\\Desktop\\GCB_Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj",
+        "projectPath": "C:\\Users\\henri\\Desktop\\GCB-Investimentos\\GCB_Care_WebApi\\GCB_Care_WebApi.csproj",
         "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henri\\Desktop\\GCB_Investimentos\\GCB_Care_WebApi\\obj\\",
+        "outputPath": "C:\\Users\\henri\\Desktop\\GCB-Investimentos\\GCB_Care_WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -27,7 +27,7 @@ const getUser =(id:any)=>{
   })
   .then((response) => response.json())
   .then((dados) => {
-     setNomeUser(dados.nome)
+     setNomeUser(dados.Nome)
   })
   .catch(err => {
       console.error(err);

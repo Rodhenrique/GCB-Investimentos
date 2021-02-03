@@ -43,7 +43,7 @@ function Panel(){
         var url = "";
         if(status == false){
             metodo = "PUT";
-            url = "http://localhost:5000/api/Medico/"+id+"";
+            url = "http://localhost:5000/api/Medico/";
         }else if(status == true){
             metodo = "POST";
             url = "http://localhost:5000/api/Medico";
@@ -56,9 +56,10 @@ function Panel(){
         console.log(macro);
 
         const user={
+            ID: id,
             Nome: nome,
             Email: email,
-            Crm: crm,
+            CRM: crm,
             Senha: senha,
             DataNascimento: "1981-01-23T04:45:33.857Z",
             TelefoneFixo: teleFixo,
@@ -70,7 +71,7 @@ function Panel(){
             Uf: uf,
             Numero: numero,
             IdTipoUsuario: 2,
-            TbMedicosEspecialidades: macro
+            Especialidades: macro
         }
 
         console.log(JSON.stringify(user))
@@ -98,7 +99,6 @@ function Panel(){
             .then((response) => response.json())
             .then((dados) => {
                 setMedicos(dados);
-                console.log(dados);
             })
             .catch((error) => console.error(error));
 
@@ -153,27 +153,28 @@ function Panel(){
             })
             .then((response) => response.json())
             .then((dados) => {
-                setNome(dados.nome);
-                setEmail(dados.email);
-                setCrm(dados.crm);
-                setSenha(dados.senha);
-                setData(dados.dataNascimento);
-                setTeleFixo(dados.telefoneFixo);
-                setCelular(dados.telefoneCelular);
+                setNome(dados.Nome);
+                setEmail(dados.Email);
+                setCrm(dados.CRM);
+                setSenha(dados.Senha);
+                setData(dados.DataNascimento);
+                setTeleFixo(dados.TelefoneFixo);
+                setCelular(dados.TelefoneCelular);
 
-                setCep(dados.cep);
-                setLogradouto(dados.logradouro);
-                setBairro(dados.bairro);
-                setLocalidade(dados.localidade);
-                setUf(dados.uf);
-                setNumero(dados.numero);
-                setId(dados.id);
+                setCep(dados.Cep);
+                setLogradouto(dados.Logradouro);
+                setBairro(dados.Bairro);
+                setLocalidade(dados.Localidade);
+                setUf(dados.Uf);
+                setNumero(dados.Numero);
+                setId(dados.ID);
+                setMedicoEspecialidades([]);
             })
             .catch(err => {
                 console.error(err);
             })
 
-            fetch('http://localhost:5000/api/MedicoEspecialidade/List/id?id='+id+'',{
+            fetch('http://localhost:5000/api/MedicoEspecialidade/List/'+id+'',{
                 method: 'GET'
             })
             .then((response) => response.json())
@@ -237,6 +238,7 @@ function Panel(){
         let resposta = window.prompt("Digite 'excluir medico' para excluir esse médico(a):")?.toLowerCase();
 
         if(resposta == "excluir medico"){
+            console.log("foi aqui")
             const url = "http://localhost:5000/api/Medico/" + id;
             fetch(url,{
                 //headers: {
@@ -254,7 +256,7 @@ function Panel(){
     }
 
     const Adicionar = () =>{ 
-       var itemBuscado = selects.filter((x:any) => x.id == itemEspecial);
+       var itemBuscado = selects.filter((x:any) => x.ID == itemEspecial);
        
        var idItem = Object.values(itemBuscado[0])[0];
        var tituloItem = Object.values(itemBuscado[0])[1];
@@ -264,7 +266,7 @@ function Panel(){
 
     function Buscar(nome: string) { 
         if (medicos.length != 0) {
-            var buscados = medicos.filter((item: any) => item.nome.toUpperCase().includes(nome.toUpperCase()));
+            var buscados = medicos.filter((item: any) => item.Nome.toUpperCase().includes(nome.toUpperCase()));
             if (buscados != undefined)
                 return buscados; 
         }
@@ -293,10 +295,10 @@ function Panel(){
     Buscar(medicoNome).map((item:any) =>{
         return(
             <li className="table-row">
-            <div className="col col-1">{item.nome}</div>
-            <div className="col col-2">{item.crm}</div>
-            <div className="col col-3"><img className="regular" src={settigs} onClick={()=>{ modal(item.id); setShowModel(true);}} alt="configurações"/></div>
-            <div className="col col-4"> <img className="regular" src={close} onClick={()=> excluir(item.id)} alt="excluir médico"/></div>
+            <div className="col col-1">{item.Nome}</div>
+            <div className="col col-2">{item.CRM}</div>
+            <div className="col col-3"><img className="regular" src={settigs} onClick={()=>{ modal(item.ID); setShowModel(true);}} alt="configurações"/></div>
+            <div className="col col-4"> <img className="regular" src={close} onClick={()=> excluir(item.ID)} alt="excluir médico"/></div>
             </li>
             )
         })
@@ -353,7 +355,7 @@ function Panel(){
                 {
                     selects.map((item:any) =>{
                         return(
-                            <option id={item.id} value={item.id}>{item.titulo}</option>
+                            <option id={item.id} value={item.ID}>{item.Titulo}</option>
                          )
                     })
                 }
@@ -364,8 +366,8 @@ function Panel(){
             {
                 especialidades.map((item:any)=>{
                     return(
-                        <div className="cards" id={"card-item"+item.id+""}>{item.idEspecialidadeNavigation.titulo} 
-                        <img className="regular" src={close} onClick={()=> removeEspecialidade(item.id)} alt="Excluir especialidade do médico(a)"/>
+                        <div className="cards" id={"card-item"+item.ID+""}>{item.Titulo} 
+                        <img className="regular" src={close} onClick={()=> removeEspecialidade(item.ID)} alt="Excluir especialidade do médico(a)"/>
                         </div>
                         )
                     })
